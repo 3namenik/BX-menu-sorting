@@ -1,6 +1,15 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
     die();
 
+if (! function_exists("array_key_last")) {
+    function array_key_last($array) {
+        if (!is_array($array) || empty($array)) {
+            return NULL;
+        }
+       
+        return array_keys($array)[count($array)-1];
+    }
+}
 
 $new_arr = [];
 
